@@ -21,17 +21,14 @@ galleryListRef.insertAdjacentHTML('beforeend', markup);
 
 galleryListRef.addEventListener('click', e => {
     e.preventDefault();
-
-const instance = basicLightbox.create(`
+    const chosenImage =  e.target;
+    const instance = basicLightbox.create(`
     <div class="modal">
-        <p>
-            Your first lightbox with just a few lines of code.
-            Yes, it's really that simple.
-        </p>
+    <img src=${chosenImage.src} width="800" height="600">
     </div>
 `)
 
 instance.show()
 
-})
+});
 
